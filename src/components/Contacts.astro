@@ -1,0 +1,34 @@
+---
+import { contacts } from '../data/site';
+---
+<section id="contacts" class="section section-dark">
+  <div class="container contacts-grid">
+    <div>
+      <span class="section-kicker">Контакты</span>
+      <h2>Оставьте заявку на подбор детали</h2>
+      <p class="contacts-lead">Напишите VIN, марку, модель, год выпуска и нужную запчасть — менеджер подготовит варианты поставки.</p>
+      <div class="contact-list">
+        <p><i class="fa-solid fa-location-dot"></i><span>{contacts.address}</span></p>
+        <p><i class="fa-solid fa-phone"></i><a href={`tel:${contacts.phone.replaceAll(' ', '')}`}>{contacts.phone}</a></p>
+        <p><i class="fa-solid fa-envelope"></i><a href={`mailto:${contacts.email}`}>{contacts.email}</a></p>
+        <p><i class="fa-solid fa-clock"></i><span>{contacts.schedule}</span></p>
+      </div>
+    </div>
+    <form class="lead-form" action={`mailto:${contacts.email}`} method="post" enctype="text/plain">
+      <label>
+        Имя
+        <input name="name" type="text" placeholder="Как к вам обращаться" />
+      </label>
+      <label>
+        Телефон или email
+        <input name="contact" type="text" placeholder="Для обратной связи" required />
+      </label>
+      <label>
+        Что нужно найти
+        <textarea name="request" placeholder="VIN, модель, год, деталь" required></textarea>
+      </label>
+      <button class="btn" type="submit">Отправить заявку</button>
+      <small>Форма открывает почтовый клиент. Для продакшена можно подключить Formspree, Telegram-бота или backend.</small>
+    </form>
+  </div>
+</section>
