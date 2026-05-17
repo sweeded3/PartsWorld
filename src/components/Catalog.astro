@@ -1,0 +1,23 @@
+---
+import { categories } from '../data/site';
+---
+<section id="catalog" class="section">
+  <div class="container">
+    <div class="section-head">
+      <span>Каталог</span>
+      <h2>Запчасти под разные типы транспорта</h2>
+      <p>Данные каталога вынесены в отдельный файл, поэтому карточки можно менять без ручного редактирования большой HTML-страницы.</p>
+    </div>
+    <div class="catalog-grid">
+      {categories.map((category) => (
+        <article class="catalog-card">
+          <div class="catalog-icon"><i class={`fa-solid ${category.icon}`}></i></div>
+          <h3>{category.title}</h3>
+          <ul>
+            {category.items.map((item) => <li><i class="fa-solid fa-check"></i>{item}</li>)}
+          </ul>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
