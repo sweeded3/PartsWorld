@@ -1,0 +1,17 @@
+---
+import { navItems } from '../data/site';
+---
+<header class="site-header" id="top">
+  <div class="container header-inner">
+    <a href="#top" class="brand" aria-label="Parts World — на главную">
+      <span class="brand-icon"><i class="fa-solid fa-bolt"></i></span>
+      <span class="brand-copy">
+        <strong>Parts <span>World</span></strong>
+        <small>Оригинальные автозапчасти из Европы</small>
+      </span>
+    </a>
+    <nav class="site-nav" aria-label="Основная навигация">
+      {navItems.map((item) => <a href={item.href}>{item.label}</a>)}
+    </nav>
+  </div>
+</header>
