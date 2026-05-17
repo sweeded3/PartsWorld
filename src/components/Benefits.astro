@@ -1,0 +1,31 @@
+---
+import { benefits } from '../data/site';
+---
+<section id="benefits" class="section section-muted">
+  <div class="container">
+    <div class="section-head">
+      <span>Почему Astro</span>
+      <h2>Та же посадочная страница, но код стал модульным</h2>
+      <p>Вместо одного большого HTML-файла лендинг собран из компонентов и переиспользуемых данных.</p>
+    </div>
+    <div class="benefits-grid">
+      {benefits.map((benefit) => (
+        <article class="benefit-card">
+          <i class={`fa-solid ${benefit.icon}`}></i>
+          <h3>{benefit.title}</h3>
+          <p>{benefit.text}</p>
+        </article>
+      ))}
+    </div>
+    <div class="compare-strip">
+      <div>
+        <strong>Обычный HTML</strong>
+        <span>Все секции, стили и данные быстро срастаются в один большой файл.</span>
+      </div>
+      <div>
+        <strong>Astro</strong>
+        <span>Секции разделены на компоненты, а данные брендов, акций и каталога вынесены отдельно.</span>
+      </div>
+    </div>
+  </div>
+</section>
