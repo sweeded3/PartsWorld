@@ -1,0 +1,23 @@
+---
+import { promos } from '../data/site';
+---
+<section id="promo" class="section">
+  <div class="container">
+    <div class="section-head">
+      <span>Спецпредложения</span>
+      <h2>Акции для розницы и опта</h2>
+      <p>Карточки формируются из массива данных. Добавить новую акцию — значит добавить объект, а не копировать HTML-блок вручную.</p>
+    </div>
+    <div class="promo-grid">
+      {promos.map((promo) => (
+        <article class="promo-card">
+          <span class="promo-badge">{promo.badge}</span>
+          <i class={`fa-solid ${promo.icon}`}></i>
+          <h3>{promo.title}</h3>
+          <p>{promo.text}</p>
+          <small>{promo.note}</small>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
