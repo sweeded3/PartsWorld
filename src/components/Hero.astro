@@ -1,0 +1,32 @@
+---
+import { brands } from '../data/site';
+const repeatedBrands = [...brands, ...brands];
+---
+<section class="hero" aria-labelledby="hero-title">
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow">Astro landing demo</span>
+      <h1 id="hero-title">Оригинальные автозапчасти с доставкой по Кыргызстану</h1>
+      <p>Компонентный лендинг Parts World: быстрее поддерживать, проще расширять и наглядно сравнивать с классическим HTML-подходом.</p>
+      <div class="hero-actions">
+        <a class="btn" href="#catalog">Смотреть каталог</a>
+        <a class="btn btn-outline" href="#contacts">Оставить заявку</a>
+      </div>
+    </div>
+    <div class="hero-card" aria-label="Ключевые цифры">
+      <strong>20+</strong>
+      <span>брендов в регулярной поставке</span>
+      <hr />
+      <strong>VIN</strong>
+      <span>подбор до оплаты заказа</span>
+      <hr />
+      <strong>Опт / розница</strong>
+      <span>форматы для частных клиентов и бизнеса</span>
+    </div>
+  </div>
+</section>
+<div class="brands-marquee" aria-label="Бренды автозапчастей">
+  <div class="brands-track">
+    {repeatedBrands.map((brand) => <span>{brand}</span>)}
+  </div>
+</div>
