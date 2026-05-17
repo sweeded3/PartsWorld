@@ -1,23 +1,47 @@
-<!doctype html>
-<html lang="ru">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Страница не найдена | Parts World</title>
-  <meta name="robots" content="noindex">
-  <meta name="theme-color" content="#ff3e00">
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/styles.css">
-</head>
-<body>
-  <main class="page-main">
-    <section class="page-title"><div class="container"><span class="eyebrow">404</span><h1>Страница не найдена</h1><p>Адрес мог измениться или страница была удалена.</p></div></section>
-    <div class="container"><article class="content-card"><h2>Что можно сделать</h2><p>Вернитесь на главную страницу и выберите нужный раздел: каталог, предложения или контакты.</p><p><a class="btn" href="index.html"><i class="fa-solid fa-house" aria-hidden="true"></i> На главную</a></p></article></div>
-  </main>
-</body>
-</html>
+# Parts World — учебный сайт для GitHub Pages
+
+Статическая версия сайта Parts World: HTML, CSS и JavaScript без серверной части.
+
+## Структура
+
+```text
+.
+├── index.html
+├── privacy.html
+├── 404.html
+├── robots.txt
+├── favicon.svg
+├── site.webmanifest
+├── .nojekyll
+├── README.md
+└── assets/
+    ├── css/
+    │   └── styles.css
+    ├── js/
+    │   └── main.js
+    └── img/
+        └── favicon.svg
+```
+
+## Что исправлено
+
+- Убрано подключение Yandex Maps с заглушкой API-ключа.
+- Карта заменена на OpenStreetMap iframe без ключей и серверных настроек.
+- Форма больше не имитирует отправку: она открывает WhatsApp с готовым текстом заявки.
+- Добавлен email fallback для заявки.
+- Удалены пустые ссылки `#` из соцсетей и футера.
+- Добавлены доступные кнопки мобильного меню и аккордеона.
+- Добавлены `privacy.html`, `404.html`, `robots.txt`, `.nojekyll` и favicon.
+- Акция с истекшей датой заменена на нейтральную формулировку «условия уточняйте у менеджера».
+
+## Публикация на GitHub Pages
+
+1. Создайте репозиторий на GitHub.
+2. Загрузите все файлы из этой папки в корень репозитория.
+3. Откройте `Settings → Pages`.
+4. В блоке `Build and deployment` выберите `Deploy from a branch`.
+5. Выберите ветку `main` и папку `/ (root)`, затем нажмите `Save`.
+
+## Важное про форму
+
+GitHub Pages — статический хостинг. Он не принимает и не хранит заявки сам по себе. Поэтому форма формирует текст и открывает WhatsApp. Для настоящей отправки на сервер понадобится Formspree, Telegram-бот, собственный backend или другой сервис обработки форм.
