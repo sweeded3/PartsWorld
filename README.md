@@ -9,6 +9,7 @@ PartsWorld теперь оформлен как демонстрационный
 - Лендинг разбит на компоненты: Header, Hero, Catalog, Benefits, Promos, Contacts, Footer.
 - Добавлен `astro.config.mjs` с настройками GitHub Pages для репозитория `/PartsWorld`.
 - Добавлен GitHub Actions workflow `.github/workflows/deploy.yml`, который собирает `dist` и публикует сайт через Pages.
+- Добавлен `public/.nojekyll`, чтобы GitHub Pages корректно отдавал Astro assets.
 
 ## Локальный запуск
 
